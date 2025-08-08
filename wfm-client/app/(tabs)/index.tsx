@@ -9,8 +9,16 @@ import { ThemedView } from "@/components/ThemedView";
 export default function HomeScreen() {
   function handleFeedingMacie() {
     //send api call to the wfm api
-    
-    throw new Error("Function not implemented.");
+    fetch("http://linuxserver:8084/feedmacie", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstParam: "fedMacie",
+      }),
+    });
   }
 
   return (
@@ -28,11 +36,15 @@ export default function HomeScreen() {
         <DoggieEmoji />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <TouchableOpacity onPress={() => {
-          handleFeedingMacie();
-        }} style={styles.button}>I fed Macie!</TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            handleFeedingMacie();
+          }}
+          style={styles.button}
+        >
+          I fed Macie!
+        </TouchableOpacity>
       </ThemedView>
-     
     </ParallaxScrollView>
   );
 }
@@ -55,8 +67,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   button: {
-    color: '#224ee0ff',
+    color: "#224ee0ff",
     borderRadius: 5,
-    
   },
 });
