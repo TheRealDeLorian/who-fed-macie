@@ -79,7 +79,7 @@ export default function HomeScreen() {
         <DoggieEmoji />
       </ThemedView>
       <ThemedText>
-        Macie was last fed by {feedingInfo?.personWhoFedMacie} ____ hours ago at ______.
+        Macie was last fed by {feedingInfo?.personWhoFedMacie} at {feedingInfo?.timeFed.toLocaleTimeString()}.
       </ThemedText>
       <ThemedView style={styles.buttonContainer}>
         <TouchableOpacity

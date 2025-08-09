@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wfm-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93eda50b04f3312cd93ac6c8bd9225e727af3acb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89f1aef543ffdf43285fe5d8f9b3b4a60190fe27")]
 [assembly: System.Reflection.AssemblyProductAttribute("wfm-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wfm-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

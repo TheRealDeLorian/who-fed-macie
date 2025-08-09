@@ -29,10 +29,7 @@ app.MapGet("/whofedmacie", () =>
     var mostRecentFeedingInfo = new
     {
         personWhoFedMacie = "Dorian",
-        timeFed = new DateTime(2025, 8, 8, 10, 24, 0, DateTimeKind.Utc)
-                      .ToUniversalTime()
-                      .Subtract(DateTime.UnixEpoch)
-                      .TotalMilliseconds
+        timeFed = new DateTime(2025, 8, 8, 22, 24, 0, DateTimeKind.Local)
     };
     Console.WriteLine("sending data to client");
     return mostRecentFeedingInfo;
