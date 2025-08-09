@@ -20,11 +20,20 @@ export default function HomeScreen() {
   useEffect(() => {
     const getWhoFedMacie = async () => {
       try {
-        const response = await fetch("http://linuxserver:8084/whofedmacie");
+        // const response = await fetch("http://linuxserver:8084/whofedmacie");
+        console.log('getting data')
+        const response = await fetch("http://localhost:5138/whofedmacie");
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
-        const newFeedingInfo = await response.json();
+        const data = await response.json();
+        console.log(data)
+        const newFeedingInfo: FeedingInfo = {
+          personWhoFedMacie: data.personWhoFedMacie,
+          timeFed: new Date(data.timeFed)
+        };
+
+        console.log('got data: ' + newFeedingInfo)
         setFeedingInfo(newFeedingInfo);
       } catch {
         setError("Data not available.");
@@ -70,7 +79,7 @@ export default function HomeScreen() {
         <DoggieEmoji />
       </ThemedView>
       <ThemedText>
-        Macie was last fed by ____ ____ hours ago at ______.
+        Macie was last fed by {feedingInfo?.personWhoFedMacie} ____ hours ago at ______.
       </ThemedText>
       <ThemedView style={styles.buttonContainer}>
         <TouchableOpacity

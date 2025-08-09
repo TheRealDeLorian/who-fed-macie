@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "H8o7Rj42vXtE67ZbxxFKWK6rvbtuqRXVCg14tlmMR60=",
+  "Source": "wfm-api",
+  "BasePath": "_content/wfm-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
