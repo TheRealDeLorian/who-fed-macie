@@ -18,18 +18,16 @@ export default function HomeScreen() {
   const [error, setError] = useState<string>();
 
   useEffect(() => {
-    try{
-
-      const getWhoFedMacie = async () => {
+    const getWhoFedMacie = async () => {
+      try {
         const response = await fetch("http://linuxserver:8084/whofedmacie");
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
         }
         const newFeedingInfo = await response.json();
         setFeedingInfo(newFeedingInfo);
-      }
-      catch {
-        
+      } catch {
+        setError("Data not available.");
       }
     };
 
